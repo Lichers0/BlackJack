@@ -24,7 +24,7 @@ class Dealer < BaseMan
   end
 
   def show_hide_cards
-    @cards.map { |_| "*" }
+    @hand.show_cards.map { |_| "*" }
   end
 
   def calculate_filter

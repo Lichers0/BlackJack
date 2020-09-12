@@ -1,4 +1,12 @@
 class Card
+  def self.suits
+    %w[♠ ♥ ♦ ♣]
+  end
+
+  def self.ranks
+    %w[A 2 3 4 5 6 7 8 9 T J Q K]
+  end
+
   def initialize(rank:, suit:)
     @rank = rank.to_sym
     @suit = suit.to_sym

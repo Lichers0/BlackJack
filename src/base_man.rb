@@ -1,7 +1,7 @@
 class BaseMan
   def initialize(desk)
     @money = 100
-    @cards = []
+    @hand = Hand.new
     @desk = desk
   end
 
@@ -15,29 +15,21 @@ class BaseMan
   end
 
   def take_two_card
-    @cards = []
+    @hand.clear
     take_one_card
     take_one_card
   end
 
   def take_one_card
-    @cards << @desk.take_one_card
+    @hand.add(@desk.take_one_card)
   end
 
   def score
-    @result = 0
-    @cards.each do |card|
-      @result += if @result + card.score <= 21
-                   card.score
-                 else
-                   card.ace? ? card.low_ace_score : card.score
-                 end
-    end
-    @result
+    @hand.score
   end
 
   def have_3cards?
-    @cards.length == 3
+    @hand.have_3cards?
   end
 
   def money?
@@ -47,6 +39,6 @@ class BaseMan
   private
 
   def show_cards
-    @cards.map(&:to_s)
+    @hand.show_cards
   end
 end

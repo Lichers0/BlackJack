@@ -117,7 +117,7 @@ class Interface
 
   def create_player
     puts "Введите ваше имя"
-    name = gets.chomp
+    name = "D" #gets.chomp
     @player = Player.new(@desk, name)
   end
 end

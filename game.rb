@@ -5,6 +5,7 @@ require_relative "src/interface"
 require_relative "src/player"
 require_relative "src/dealer"
 require_relative "src/card"
+require_relative "src/hand"
 
 
 t = Interface.new

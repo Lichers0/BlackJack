@@ -17,11 +17,9 @@ class Desk
   end
 
   def new_desk
-    suits = %w[♠ ♥ ♦ ♣]
-    ranks = %w[A 2 3 4 5 6 7 8 9 T J Q K]
     @desk = []
-    suits.each do |suit|
-      ranks.each do |rank|
+    Card.suits.each do |suit|
+      Card.ranks.each do |rank|
         @desk <<= Card.new(rank: rank, suit: suit)
       end
     end
